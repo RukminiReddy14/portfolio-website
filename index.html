@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Rukmini Reddy: Boston-based data analyst working on data analysis, dashboards, and AI applications.">
+<title>Rukmini Reddy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: scrapbook portfolio on a maroon board — photo + intro, then cream "sticky note" cards with hard black offset shadows. Single deliberate dark look. */
+:root {
+  --board: #5e0230;
+  --board-deep: #48001f;
+  --olive: #a9b964;
+  --olive-ink: #4f5a1f;
+  --cream: #fffdd2;
+  --gold: #f2b928;
+  --spark: #c4251c;
+  --shadow: #0d0006;
+  --rule: rgba(169, 185, 100, .45);
+  --display: "Bricolage Grotesque", "DM Sans", system-ui, sans-serif;
+  --body: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--board);
+  color: var(--olive);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.55;
+  margin: 0;
+}
+.wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding-block: 48px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid;
+  gap: 88px;
+}
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; line-height: 1.05; }
+.section-title {
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -.02em;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.spark { width: .8em; height: .8em; flex: none; }
+.spark { fill: var(--spark); }
+
+/* ---------- top nav ---------- */
+nav {
+  display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; align-items: baseline;
+}
+.mark { font-family: var(--display); font-weight: 800; font-size: 1.25rem; letter-spacing: -.01em; text-decoration: none; }
+nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 20px; font-weight: 500; }
+nav ul a { text-decoration: none; border-bottom: 2px solid transparent; }
+nav ul a:hover { border-color: var(--olive); }
+
+/* ---------- about ---------- */
+.about { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 48px; align-items: start; }
+.photo-frame { position: relative; margin: 12px 0 0 12px; max-width: 300px; }
+.photo-frame img {
+  display: block; width: 100%; height: auto; aspect-ratio: 718 / 860; object-fit: cover;
+  transform: rotate(-2deg);
+  box-shadow: 10px 10px 0 var(--shadow);
+}
+.clip { position: absolute; top: -22px; left: -14px; width: 34px; transform: rotate(-20deg); z-index: 2; }
+.clip path { stroke: #2fc4e8; }
+.stars { position: absolute; width: 52px; z-index: 2; }
+.stars { fill: var(--gold); }
+.stars.tr { top: -20px; right: -18px; }
+.stars.bl { bottom: -14px; left: -22px; width: 44px; }
+
+.intro { display: grid; gap: 28px; min-width: 0; }
+.intro h1 { font-size: clamp(2.8rem, 7.5vw, 4.6rem); font-weight: 800; letter-spacing: -.03em; color: var(--olive); }
+.intro h1 small { display: block; font-family: var(--body); font-size: .32em; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 10px; }
+.lined {
+  font-size: clamp(1.15rem, 2.2vw, 1.4rem); font-weight: 700; line-height: 1.7; max-width: 34ch; margin: 0;
+  background-image: linear-gradient(to bottom, transparent calc(100% - 1px), var(--rule) 0);
+  background-size: 100% 1.7em;
+}
+.tags { display: grid; gap: 12px; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.tag-row > span:first-child { font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; min-width: 96px; }
+.tag {
+  font-family: var(--mono); font-size: .85rem; padding: 4px 10px;
+  border: 1.5px solid var(--olive); border-radius: 3px;
+}
+.tag-row.focus .tag { background: var(--olive); color: var(--board-deep); }
+
+.side-row { display: flex; flex-wrap: wrap; gap: 28px; align-items: center; }
+.resume {
+  display: inline-flex; align-items: center; gap: 12px; font-family: var(--display); font-weight: 800; font-size: 1.35rem;
+  text-underline-offset: 5px; text-decoration-thickness: 2px;
+}
+.resume svg { width: 34px; height: 44px; flex: none; }
+.resume svg rect { stroke: var(--cream); }
+.resume svg line { stroke: var(--cream); }
+
+.bubble {
+  position: relative; background: var(--cream); color: var(--olive-ink); border-radius: 22px;
+  padding: 16px 20px; max-width: 360px; font-weight: 700; font-size: .98rem; line-height: 1.45;
+}
+.bubble strong { display: block; font-family: var(--display); font-size: 1.1rem; }
+.bubble::before, .bubble::after {
+  content: ""; position: absolute; width: 22px; height: 6px; background: var(--gold); border-radius: 3px;
+}
+.bubble::before { top: -10px; left: -8px; transform: rotate(-40deg); }
+.bubble::after { bottom: -10px; right: -8px; transform: rotate(-40deg); }
+
+/* ---------- cards ---------- */
+.stack { display: grid; gap: 28px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 40px 36px; }
+.card {
+  background: var(--cream); color: var(--olive-ink); border: 3px solid var(--shadow); border-radius: 34px;
+  box-shadow: 14px 14px 0 var(--shadow); padding: 28px 28px 30px; display: grid; gap: 16px; align-content: start; min-width: 0;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.card:hover { transform: translate(-3px, -3px); box-shadow: 17px 17px 0 var(--shadow); }
+.card-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 14px; }
+.card h3 { font-size: 1.45rem; font-weight: 800; letter-spacing: -.01em; }
+.card-link {
+  font-family: var(--mono); font-size: .8rem; color: var(--cream); background: var(--board); padding: 4px 10px; border-radius: 3px;
+  text-decoration: none; white-space: nowrap;
+}
+.card-link:hover { background: var(--board-deep); }
+.card dl { margin: 0; display: grid; gap: 10px; }
+.card dl div { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 12px; }
+.card dt { font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; padding-top: 3px; color: var(--board); }
+.card dd { margin: 0; font-weight: 500; font-size: .98rem; }
+.card dd b { color: var(--board); font-variant-numeric: tabular-nums; }
+
+.role { font-family: var(--display); font-size: clamp(1.3rem, 3vw, 1.75rem); font-weight: 600; }
+.card.wide { max-width: 860px; }
+
+/* ---------- contact ---------- */
+.contact { display: grid; gap: 22px; }
+.contact h2 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); font-weight: 800; }
+.contact-list { display: flex; flex-wrap: wrap; gap: 14px 40px; list-style: none; margin: 0; padding: 0; color: var(--cream); font-weight: 700; }
+.contact-list li { display: flex; align-items: center; gap: 12px; }
+.contact-list svg { width: 34px; height: 34px; flex: none; }
+.contact-list svg * { stroke: var(--cream); fill: none; }
+.contact-list .val { user-select: all; font-variant-numeric: tabular-nums; }
+.copy {
+  font: 500 .75rem var(--mono); color: var(--board-deep); background: var(--olive); border: 0; border-radius: 3px;
+  padding: 4px 8px; cursor: pointer;
+}
+.copy:hover { background: var(--cream); }
+footer { font-size: .85rem; opacity: .75; }
+
+@media (max-width: 760px) {
+  .wrap { gap: 64px; padding-block: 32px 48px; }
+  .about { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .photo-frame { max-width: 260px; }
+  .card { padding: 22px 20px 24px; border-radius: 26px; box-shadow: 9px 9px 0 var(--shadow); }
+  .card:hover { box-shadow: 11px 11px 0 var(--shadow); }
+  .card dl div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+}
+@media (prefers-reduced-motion: reduce) { .card, .card:hover { transition: none; transform: none; } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="spark" viewBox="0 0 40 40"><path d="M20 0 L23 15 L40 20 L23 25 L20 40 L17 25 L0 20 L17 15 Z"/></symbol>
+    <symbol id="stars" viewBox="0 0 60 60">
+      <path d="M22 4l4 10 11 1-8 7 3 11-10-6-10 6 3-11-8-7 11-1z"/>
+      <path d="M46 26l2.5 6 6.5.5-5 4.2 1.8 6.3-5.8-3.6-5.8 3.6 1.8-6.3-5-4.2 6.5-.5z"/>
+      <path d="M16 38l2 4.8 5.2.4-4 3.4 1.4 5-4.6-2.8-4.6 2.8 1.4-5-4-3.4 5.2-.4z"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+  <nav aria-label="Sections">
+    <a class="mark" href="#about">Rukmini Reddy</a>
+    <ul>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="about" class="about" aria-labelledby="about-title">
+    <div class="photo-frame">
+      <svg class="clip" viewBox="0 0 30 60" aria-hidden="true"><path d="M20 12 V44 a7 7 0 0 1 -14 0 V10 a5 5 0 0 1 10 0 V40" fill="none" stroke-width="3" stroke-linecap="round"/></svg>
+      <svg class="stars tr" aria-hidden="true"><use href="#stars"/></svg>
+      <img src="assets/profile.jpg" alt="Rukmini Reddy standing outside on a sunny winter day in Boston">
+      <svg class="stars bl" aria-hidden="true"><use href="#stars"/></svg>
+    </div>
+
+    <div class="intro">
+      <h1 id="about-title"><small>About me</small>Namaste! I’m Rukmini.</h1>
+      <p class="lined">A Boston-based data analyst with a Master’s in Data Analytics Engineering from Northeastern. I work on data analysis, dashboards, and AI applications. Outside work, I love reading and building things.</p>
+
+      <div class="tags">
+        <div class="tag-row"><span>Tools</span><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Tableau</span><span class="tag">Power BI</span></div>
+        <div class="tag-row focus"><span>Focus areas</span><span class="tag">Machine Learning</span><span class="tag">LLMs</span><span class="tag">NLP</span><span class="tag">Agentic AI</span><span class="tag">Analysis</span></div>
+      </div>
+
+      <div class="side-row">
+        <a class="resume" href="https://drive.google.com/file/d/1EhEPAB4-oFe1e_oXSHcAUOYiUNSnlKbH/view?usp=sharing" target="_blank" rel="noopener">
+          <svg viewBox="0 0 34 44" aria-hidden="true" fill="none" stroke-width="1.6"><rect x="1" y="1" width="32" height="42" rx="2"/><line x1="7" y1="10" x2="27" y2="10"/><line x1="7" y1="18" x2="20" y2="18"/><line x1="7" y1="24" x2="27" y2="24"/><line x1="7" y1="29" x2="27" y2="29"/><line x1="7" y1="34" x2="22" y2="34"/></svg>
+          Resume
+        </a>
+        <div class="bubble"><strong>Superpower: Curiosity + Fast Learning</strong>Always exploring, always learning, which is key in the age of AI. (My superpowers do their best work with a side of caffeine.)</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="stack" aria-labelledby="projects-title">
+    <h2 id="projects-title" class="section-title"><svg class="spark" aria-hidden="true"><use href="#spark"/></svg>Projects</h2>
+    <div class="cards">
+      <article class="card">
+        <div class="card-head">
+          <h3>Game-Day Forecasting for Concessions</h3>
+          <a class="card-link" href="https://public.tableau.com/views/BaseballAnalysis_17899985523270/ClevelandGuardiansPredictingGame-DayDemandforConcessions?:language=en-US&amp;:sid=&amp;:redirect=auth&amp;:display_count=n&amp;:origin=viz_share_link" target="_blank" rel="noopener">Tableau ↗</a>
+        </div>
+        <dl>
+          <div><dt>Problem</dt><dd>Concessions teams have to plan staff and inventory weeks before any sales data comes in.</dd></div>
+          <div><dt>Data</dt><dd>20 years of home games (<b>1,647</b>) combined with NOAA weather.</dd></div>
+          <div><dt>Insight</dt><dd>Three factors known in advance drive a nearly <b>3×</b> swing in attendance, from about <b>9.8K</b> to <b>26.4K</b> fans.</dd></div>
+          <div><dt>Solution</dt><dd>A Low / Medium / High demand-tier model and a Tableau dashboard.</dd></div>
+          <div><dt>Impact</dt><dd>Planners can schedule staff and inventory <b>2–3 weeks</b> ahead.</dd></div>
+        </dl>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <h3>F1 Race Summarizer and Predictor</h3>
+          <a class="card-link" href="https://github.com/RukminiReddy14/F1-race-summarizer-and-predictor" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+        <dl>
+          <div><dt>Problem</dt><dd>Turning raw F1 race data into a clear race story takes hours of manual analysis.</dd></div>
+          <div><dt>Data</dt><dd>Lap-by-lap telemetry for <b>20+</b> drivers across every race from 2018 to now (FastF1, Ergast).</dd></div>
+          <div><dt>Engine</dt><dd>Rule-based detection of <b>5</b> race event types with <b>83%</b> accuracy on noisy data.</dd></div>
+          <div><dt>AI layer</dt><dd>Feeds the detected events to Claude or GPT through a compact prompt (under <b>2,000</b> tokens), so the report sticks to facts.</dd></div>
+          <div><dt>Impact</dt><dd>A full race report in under <b>20 seconds</b>, generated with one click in a Streamlit app.</dd></div>
+        </dl>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <h3>AskRC: RAG Chatbot for Research Computing</h3>
+        </div>
+        <dl>
+          <div><dt>Problem</dt><dd>Research Computing information is spread across many pages, making answers hard to find.</dd></div>
+          <div><dt>Pipeline</dt><dd>Daily Airflow pipeline scrapes and indexes the information into Azure AI Search (~<b>2,700</b> chunks).</dd></div>
+          <div><dt>AI layer</dt><dd>GPT-4 answers only from retrieved information, with bias and relevance checks on every answer.</dd></div>
+          <div><dt>MLOps</dt><dd>Automated testing and Azure deployment via GitHub Actions, with MLflow logging and Slack alerts.</dd></div>
+          <div><dt>Impact</dt><dd>Grounded answers in one place, refreshed automatically every day.</dd></div>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <section id="experience" class="stack" aria-labelledby="experience-title">
+    <h2 id="experience-title" class="section-title"><svg class="spark" aria-hidden="true"><use href="#spark"/></svg>Experience</h2>
+    <p class="role" style="margin:0">Data Analyst · Community Dreams Foundation</p>
+    <article class="card wide">
+      <dl>
+        <div><dt>Donor retention</dt><dd>Analyzed 3 years of donation data (~<b>4,500</b> donors, ~<b>12K</b> gifts) in SQL and Python and found that donors thanked within <b>48 hours</b> were about <b>2×</b> more likely to give again.</dd></div>
+        <div><dt>Dashboard</dt><dd>Built a Power BI dashboard tracking retention across <b>4</b> channels and <b>10+</b> campaigns, flagging ~<b>300</b> at-risk donors each month for outreach.</dd></div>
+        <div><dt>Impact</dt><dd>Helped the fundraising team redesign follow-up for year-end giving, raising second-gift rates from about <b>20%</b> to <b>26%</b>.</dd></div>
+      </dl>
+    </article>
+  </section>
+
+  <section id="contact" class="contact" aria-labelledby="contact-title">
+    <h2 id="contact-title">Coffee &amp; Data? Let’s Connect</h2>
+    <ul class="contact-list">
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+        <a href="https://github.com/RukminiReddy14" target="_blank" rel="noopener">github.com/RukminiReddy14</a>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true" stroke-width="1.6" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="1"/><path d="M2 6l10 7 10-7"/></svg>
+        <span class="val" id="email">reddyr.rukmini@gmail.com</span>
+        <button class="copy" type="button" id="copy-email" data-target="email">Copy</button>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true" stroke-width="1.6" stroke-linejoin="round"><circle cx="12" cy="12" r="11"/><path d="M9.2 6.5l1.3 2.6-1.2 1.2a7 7 0 0 0 3.4 3.4l1.2-1.2 2.6 1.3-.6 2a1.5 1.5 0 0 1-1.6 1A10 10 0 0 1 7.2 9.7a1.5 1.5 0 0 1 1-1.6z"/></svg>
+        <span class="val" id="phone">857-313-4902</span>
+        <button class="copy" type="button" id="copy-phone" data-target="phone">Copy</button>
+      </li>
+    </ul>
+    <footer>© 2026 Rukmini Reddy · Boston, MA</footer>
+  </section>
+</div>
+
+<script>
+document.querySelectorAll('.copy').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var el = document.getElementById(btn.dataset.target);
+    var text = el.textContent.trim();
+    function done() { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy'; }, 1600); }
+    function select() { var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'Selected'; setTimeout(function () { btn.textContent = 'Copy'; }, 1600); }
+    try { navigator.clipboard.writeText(text).then(done, select); } catch (e) { select(); }
+  });
+});
+</script>
+</body>
+</html>
